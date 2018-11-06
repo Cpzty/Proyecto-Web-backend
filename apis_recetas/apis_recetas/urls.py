@@ -69,9 +69,11 @@ router.register(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
+    path('api/v1/rest-auth/', include('rest_auth.urls')),
     url(r'^api/v1/auth/token/obtain/$', obtain_jwt_token),
     url(r'^api/v1/auth/token/refresh/$', refresh_jwt_token),
     url(r'^api/v1/auth/token/verify/$', verify_jwt_token),
+    
 ]
 
 
