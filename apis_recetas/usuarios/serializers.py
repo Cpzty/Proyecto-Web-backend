@@ -6,7 +6,9 @@ from . import models
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        exclude = ['password']
+        fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name')
+
+    
         
 class FavsUserSerializer(serializers.ModelSerializer):
     class Meta:
