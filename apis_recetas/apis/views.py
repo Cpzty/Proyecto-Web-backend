@@ -8,6 +8,7 @@ from rest_framework import generics
 from . import models, serializers
 
 #Permisos
+"""
 class RecetasPermissions(BasePermission):
     def has_permission(self, request, view):
         if view.action == 'create':
@@ -27,7 +28,7 @@ class RecetasPermissions(BasePermission):
         elif view.action == 'send_reminder':
             return True
         return False
-
+"""
       
 class CategoriaModelViewSet(viewsets.ModelViewSet):
     queryset = models.Categoria.objects.all()
@@ -37,5 +38,5 @@ class CategoriaModelViewSet(viewsets.ModelViewSet):
 class RecetaModelViewSet(viewsets.ModelViewSet):
     queryset = models.Receta.objects.all()
     serializer_class = serializers.RecetaSerializer
-    permission_classes = [RecetasPermissions]
+    permission_classes = [permissions.AllowAny]
 
